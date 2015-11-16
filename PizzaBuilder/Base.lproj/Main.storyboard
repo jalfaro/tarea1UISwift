@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rUu-or-jP9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PizzaBuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,224 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el tamaño de su pizza:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNj-ud-e9o">
+                                <rect key="frame" x="165" y="100" width="270" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="tfn-TP-48i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eN3-2y-577">
+                                <rect key="frame" x="0.0" y="159" width="600" height="162"/>
+                                <animations/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hh-4W-G0N">
+                                <rect key="frame" x="262" y="356" width="76" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="YHz-rt-zVd"/>
+                                </constraints>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FQB-tq-082" kind="showDetail" id="BRR-Jv-Jdv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xNj-ud-e9o" firstAttribute="centerX" secondItem="eN3-2y-577" secondAttribute="centerX" id="MDh-UH-Ddo"/>
+                            <constraint firstItem="eN3-2y-577" firstAttribute="top" secondItem="xNj-ud-e9o" secondAttribute="bottom" constant="38" id="d2B-Uj-X4F"/>
+                            <constraint firstItem="eN3-2y-577" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gpj-S7-TKw"/>
+                            <constraint firstAttribute="trailing" secondItem="eN3-2y-577" secondAttribute="trailing" id="lKn-ah-sbS"/>
+                            <constraint firstItem="xNj-ud-e9o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="lnt-ZX-tqx"/>
+                            <constraint firstItem="xNj-ud-e9o" firstAttribute="centerX" secondItem="4Hh-4W-G0N" secondAttribute="centerX" id="tBo-hy-0Y1"/>
+                            <constraint firstItem="4Hh-4W-G0N" firstAttribute="top" secondItem="eN3-2y-577" secondAttribute="bottom" constant="35" id="yOW-jO-yMu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ek7-b2-bH6"/>
+                    <connections>
+                        <outlet property="pckTamano" destination="eN3-2y-577" id="Ac9-91-urr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1080" y="464"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KBU-vh-0zQ">
+            <objects>
+                <viewController id="FQB-tq-082" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ma3-8z-EhU"/>
+                        <viewControllerLayoutGuide type="bottom" id="xey-B7-oL9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FTn-uI-gJG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el tipo de masa de su pizza :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPa-i3-zYT">
+                                <rect key="frame" x="146" y="98" width="308" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sx3-Br-aml">
+                                <rect key="frame" x="0.0" y="175" width="600" height="162"/>
+                                <animations/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKy-cv-RJ7">
+                                <rect key="frame" x="268" y="380" width="64" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GxC-1n-yav" kind="showDetail" id="s10-kk-9Hk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Sx3-Br-aml" secondAttribute="trailing" id="6AJ-yV-3Pj"/>
+                            <constraint firstItem="Sx3-Br-aml" firstAttribute="centerX" secondItem="lPa-i3-zYT" secondAttribute="centerX" id="MVN-Z8-dOR"/>
+                            <constraint firstItem="Sx3-Br-aml" firstAttribute="top" secondItem="lPa-i3-zYT" secondAttribute="bottom" constant="56" id="Qaw-8o-MlS"/>
+                            <constraint firstItem="OKy-cv-RJ7" firstAttribute="top" secondItem="Sx3-Br-aml" secondAttribute="bottom" constant="43" id="XmE-8i-u8b"/>
+                            <constraint firstItem="Sx3-Br-aml" firstAttribute="leading" secondItem="FTn-uI-gJG" secondAttribute="leading" id="agl-iZ-72z"/>
+                            <constraint firstItem="lPa-i3-zYT" firstAttribute="top" secondItem="Ma3-8z-EhU" secondAttribute="bottom" constant="78" id="ax0-yT-eXU"/>
+                            <constraint firstItem="Sx3-Br-aml" firstAttribute="centerX" secondItem="OKy-cv-RJ7" secondAttribute="centerX" id="wJR-4N-TMe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ray-Ig-hWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752" y="464"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yuG-Pe-WN1">
+            <objects>
+                <viewController id="GxC-1n-yav" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dlC-bZ-2Nl"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7s-Cl-pvU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fmv-RB-kJi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el tipo de queso de su pizza :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-qf-cbr">
+                                <rect key="frame" x="138" y="95" width="314" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGk-ir-VUH">
+                                <rect key="frame" x="-5" y="167" width="600" height="162"/>
+                                <animations/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuO-N7-4f4">
+                                <rect key="frame" x="272" y="372" width="64" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Flz-Td-0O7" kind="showDetail" id="h8H-Kj-545"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lGk-ir-VUH" firstAttribute="centerX" secondItem="xRb-qf-cbr" secondAttribute="centerX" id="2R0-ON-vRx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lGk-ir-VUH" secondAttribute="trailing" constant="-11" id="Ben-yI-avW"/>
+                            <constraint firstItem="cuO-N7-4f4" firstAttribute="top" secondItem="lGk-ir-VUH" secondAttribute="bottom" constant="43" id="TTE-5Z-Um7"/>
+                            <constraint firstItem="lGk-ir-VUH" firstAttribute="centerX" secondItem="cuO-N7-4f4" secondAttribute="centerX" id="WiL-pS-yUi"/>
+                            <constraint firstItem="lGk-ir-VUH" firstAttribute="top" secondItem="xRb-qf-cbr" secondAttribute="bottom" constant="51" id="qsm-AM-gy6"/>
+                            <constraint firstItem="xRb-qf-cbr" firstAttribute="top" secondItem="dlC-bZ-2Nl" secondAttribute="bottom" constant="75" id="tCK-5j-Zhf"/>
+                            <constraint firstItem="lGk-ir-VUH" firstAttribute="leading" secondItem="Fmv-RB-kJi" secondAttribute="leadingMargin" constant="-21" id="udh-tJ-tNA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNR-1e-q7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2446" y="464"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uaR-Ab-dD0">
+            <objects>
+                <viewController id="Flz-Td-0O7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VUP-0M-8fz"/>
+                        <viewControllerLayoutGuide type="bottom" id="gTx-Kd-HrI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cUa-2G-1Ee">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el ingrediente de su pizza :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk1-jY-Mth">
+                                <rect key="frame" x="154" y="86" width="293" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwP-Eg-Ibf">
+                                <rect key="frame" x="0.0" y="160" width="600" height="162"/>
+                                <animations/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gM8-w7-kVG">
+                                <rect key="frame" x="277" y="401" width="57" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Finalizar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iwP-Eg-Ibf" secondAttribute="trailing" id="9BL-Ll-keI"/>
+                            <constraint firstItem="gM8-w7-kVG" firstAttribute="top" secondItem="iwP-Eg-Ibf" secondAttribute="bottom" constant="79" id="Dfm-9K-o4y"/>
+                            <constraint firstItem="Pk1-jY-Mth" firstAttribute="centerX" secondItem="gM8-w7-kVG" secondAttribute="centerX" constant="-5" id="Ir2-6o-heg"/>
+                            <constraint firstItem="iwP-Eg-Ibf" firstAttribute="leading" secondItem="cUa-2G-1Ee" secondAttribute="leading" id="JIl-Sk-9yR"/>
+                            <constraint firstItem="Pk1-jY-Mth" firstAttribute="centerX" secondItem="iwP-Eg-Ibf" secondAttribute="centerX" id="NJk-6k-uV7"/>
+                            <constraint firstItem="iwP-Eg-Ibf" firstAttribute="top" secondItem="Pk1-jY-Mth" secondAttribute="bottom" constant="53" id="Sh8-nc-qez"/>
+                            <constraint firstItem="Pk1-jY-Mth" firstAttribute="top" secondItem="VUP-0M-8fz" secondAttribute="bottom" constant="66" id="Z6H-7X-TP4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ew4-tY-fCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3125" y="464"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e8h-QM-qkC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rUu-or-jP9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="udT-Vr-WKs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cB3-FP-UWJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2H-JC-yL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="464"/>
         </scene>
     </scenes>
 </document>

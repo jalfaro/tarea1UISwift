@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let tamano = ["chica", "mediana", "grande"]
+    
+    @IBOutlet weak var pckTamano: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //pckTamano.delegate = self
+        //pckTamano.dataSource = self
+       // pckTamano.selectRow(1, 3, false)
     }
 
     override func didReceiveMemoryWarning() {
